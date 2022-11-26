@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("../kepek/hatter.jpg");
+  background-position: center;
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  padding-top: 3px;
+  font-size: clamp(0.8rem, 3vw, 1.5vw); 
+}
+
+.container {
+  display: grid;
+  background-color: #fff;
+  grid-column: 2;
+  grid-template-rows: 140px auto 50px;
+  grid-template-columns: 1fr 2fr 2fr;
+  gap: 0 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  grid-row: 1;
+}
+
+header {
+  background-image: url("../kepek/fejlec.jpg");
+  display: grid;
+  justify-content: center;
+  align-items: flex-end;
+  grid-column: span 3;
+  padding: 15px;
+}
+
+header h1 {
+  color: #fff;
+  text-shadow: 0px 0px 3px #000;
+}
+nav {
+  padding: 30px 0;
+}
+nav ul {
+  list-style: none;
+  display: grid;
+  gap: 3px;
+  justify-content: center;
+  grid-auto-columns: 90%;
+}
+
+nav ul li a {
+  text-decoration: none;
+  display: block;
+  background-color: #008de8;
+  padding: 5px 20px;
+  text-align: center;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+nav ul li a:hover,
+nav ul li a:active {
+  background-color: #0477c4;
+}
+
+#galeria {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+}
+
+.galeria-kep-blokk {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.galeria-kep-sor {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#galeria .galeria-kep-blokk .galeria-kep-sor:nth-child(1) img {
+  transform: rotate(-8deg);
+}
+
+#galeria .galeria-kep-blokk .galeria-kep-sor:nth-child(2) img {
+  transform: rotate(8deg);
+}
+
+#galeria img {
+  width: 170px;
+  height: 150px;
+  background-color: #fff;
+  padding: 15px;
+  padding-bottom: 35px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  object-fit: cover;
+}
+
+main {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  display: grid;
+  align-items: center;
+  padding: 20px;
+  height: 100%;
+}
+
+main h2 {
+  padding: 20px 0;
+}
+
+footer {
+  background-color: #13a0ff;
+  grid-column: span 3;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    width: 100%;
+    margin: 0;
+    gap: 0;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 140px repeat(3, auto) 50px;
+  }
+
+  header,
+  footer {
+    grid-column: auto;
+  }
+}
